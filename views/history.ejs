@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload History</title>
+</head>
+<body>
+  <h2>Uploaded Files History</h2>
+  <ul>
+    <% files.forEach(file => { %>
+      <li>
+        <strong><%= file.filename %></strong> - <%= file.uploadedAt.toDateString() %>
+        <pre><%= JSON.stringify(file.data[0], null, 2) %> ...</pre>
+      </li>
+    <% }) %>
+  </ul>
+  <a href="/">Go Back</a>
+</body>
+</html>

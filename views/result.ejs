@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Excel Data</title>
+</head>
+<body>
+  <h1>Parsed Excel Data</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <% if (data.length > 0) {
+          Object.keys(data[0]).forEach(key => { %>
+            <th><%= key %></th>
+        <% }) } %>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(row => { %>
+        <tr>
+          <% Object.values(row).forEach(val => { %>
+            <td><%= val %></td>
+          <% }) %>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <br>
+  <a href="/">← Upload Another File</a>
+</body>
+</html>
+
